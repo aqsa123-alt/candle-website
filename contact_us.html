@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Contact Us</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(to bottom, #0f0f0f, #1f1f1f);
+            color: white;
+            font-family: Georgia;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 250px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: none;
+            background: linear-gradient(to right, orange, red);
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            box-shadow: 0 0 15px orange;
+        }
+
+        a {
+            color: #ffcc70;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Contact Us</h1>
+
+    <p>We will respond via WhatsApp 📲</p>
+
+    <!-- FORM -->
+    <form onsubmit="sendMessage(); return false;">
+
+        <input type="text" id="name" placeholder="Your Name" required><br>
+
+        <input type="email" id="email" placeholder="Your Email" required><br>
+
+        <textarea id="message" placeholder="Your Message" required></textarea><br>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+    <br>
+
+    <a href="c_index.html">⬅ Back to Home</a>
+
+    <!-- SCRIPT -->
+    <script>
+        function sendMessage() {
+            var name = document.getElementById("name").value;
+            var message = document.getElementById("message").value;
+
+            var whatsappURL = "https://wa.me/923402599716?text="
+            + "Name: " + name + "%0A"
+            + "Message: " + message;
+
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+
+</body>
+</html>
